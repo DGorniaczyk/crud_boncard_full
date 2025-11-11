@@ -1,4 +1,33 @@
+//create Database
 CREATE DATABASE cards_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+//Create tables via migration from php
 
+php artisan migrate
 
+//Seed Database with example records
+
+php artisan db:seed --class=DemoDataSeeder
+
+//Run dev enviroment
+
+php artisan serve
+
+//As this app has no frontend please use POSTMAN
+
+Post http://localhost:8000/api/login
+
+// if used examples
+
+{
+  "email": "alice@example.com",
+  "password": "password1"
+}
+
+//This should return authorization token for user - use it to view cards
+
+Get http://localhost:8000/api/cards
+
+//This will show 10 cards as per pagination to access the rest from example use this
+
+Get http://localhost:8000/api/cards?page=2
