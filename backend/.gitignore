@@ -1,0 +1,9 @@
+*.log
+/vendor
+/node_modules
+/.env
+/public/storage
+/storage/*.key
+/storage/debugbar
+/.idea
+/.vscode
